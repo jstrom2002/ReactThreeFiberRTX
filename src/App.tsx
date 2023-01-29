@@ -1,10 +1,14 @@
 import MeshCanvas from "./Components/MeshCanvas";
-import React from "react";
+import React, { Suspense } from "react";
+import { Leva } from "leva";
 
 export default function App() {
   return (
     <>
-      <MeshCanvas />
+      <Suspense fallback="loading">
+        <MeshCanvas />
+        <Leva collapsed />
+      </Suspense>
     </>
   );
 }
